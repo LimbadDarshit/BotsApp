@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Personal Chat</title>
+    <title>Group Chat</title>
     
-    <link rel="stylesheet" href="css/index.css" type="text/css"> 
+    <link rel="stylesheet" href="css/group_chat.css" type="text/css"> 
 </head>
 <body>
     

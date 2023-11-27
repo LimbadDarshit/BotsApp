@@ -22,14 +22,14 @@
 
     <div class="side-bar">
         <div class="top">
-            <div class="options">
+            <div class="options" onclick="window.location.assign('/botsapp/')"> <!-- change location  '/'-->
                 <div class="img">
                     <img src="img/icons/chat-30.png" alt="Chat">
                 </div>
                 <h6>Personal</h6>
             </div>
             
-            <div class="options">
+            <div class="options" onclick="window.location.assign('/botsapp/group_chat.php')">   <!-- change location  '/group_chat.php'-->
                 <div class="img">
                     <img src="img/icons/group_chat-48.png" alt="Group">
                 </div>

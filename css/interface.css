@@ -96,8 +96,6 @@ header .title p {
 }
 
 .side-bar .profile .img img {
-    height: auto;
-    width: 35px;
     border-radius: 25px;
 }
 
