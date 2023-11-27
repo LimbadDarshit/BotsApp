@@ -1,0 +1,120 @@
+*{
+    background-color:rgb(1, 12, 23);
+    user-select: none;
+}
+
+header  {
+    display: block;
+    height: 30px;
+}
+
+header .title{
+    height: inherit;
+   display: flex;
+   justify-content: center;
+   text-align: center;
+   align-items: center;
+   color: aliceblue;
+}
+
+header .title h1 , img  {
+    height: 30px;
+    width: 30px;
+    font-size: 25px;
+}
+
+header .title p {
+    transform: translateX(100px);
+}
+
+.side-bar .top .options:nth-child(0) > .img {
+    border: 1.5px solid rgba(155, 155, 155, 0.37);
+    border-left: 5px solid rgba(137, 43, 226, 0.854);
+}
+
+.side-bar .bottom .options:nth-child(0) > .img {
+    height: 31px;
+    width: 31px;
+    background-color: rgba(80, 79, 79, 0.623);
+    filter: brightness(150%);
+}
+
+.side-bar   {
+    display: block;
+    position: fixed;
+    top: 7%;
+    width: auto;
+    height: 100%;
+    color: antiquewhite;
+}
+
+.side-bar {
+    display: block;
+    position: fixed ;
+    padding: 5px;
+    margin: 4px;
+}
+
+.side-bar .options  {
+    margin: 10px 2px;
+    text-align: center;
+}
+
+.side-bar .bottom   {
+    display: block;
+    position: fixed;
+    bottom: 0%;
+}
+
+
+.side-bar .options .img  {
+    height: 30px;
+    width: 30px;
+    display: flex;  
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    padding: 2px;
+    border-radius: 5px;
+    
+}
+
+.side-bar .profile .img  {
+    transform: translateX(5px);
+    margin: 0px;
+    border: none;
+    border-radius: 20px;
+    
+}
+
+
+.side-bar .options .img img {
+    height: auto;
+    width: 20px;
+    mix-blend-mode: lighten;
+}
+
+.side-bar .profile .img img {
+    height: auto;
+    width: 35px;
+    border-radius: 25px;
+}
+
+.side-bar .options:hover > .img  {
+    background-color: rgba(80, 79, 79, 0.623);
+    opacity: 80%;
+    transition: .5s background ;
+}
+
+.side-bar .options h6 {
+    margin: 1px;
+    font-size: calc(80%);
+    transform: translateX(-7%);
+}
+
+.chat-container {
+    display: block;
+    position: fixed;
+    background-color: aliceblue;
+}
