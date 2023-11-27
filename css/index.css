@@ -1,4 +1,4 @@
-.side-bar .top .options:nth-child(1) > .img {
+.side-bar .top .options:nth-child(2) > .img {
     border: 1.5px solid rgba(155, 155, 155, 0.37);
     border-left: 5px solid rgba(137, 43, 226, 0.854);
 }
