@@ -10,56 +10,57 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="css/interface.css" type="text/css">
+    <!-- Script -->
+    <script type="text/javascript" src="js/interface.js"></script>
+
 </head>
 <body>
     <header>
         <div class="title">
-            <img src="img/botsapp_white.png">
-            <h1>BotsApp</h1>
+            <img src="img/botsapp_white.png" onclick="tohomepage()">
+            <h1 onclick="tohomepage()">BotsApp</h1>
             <p>-A Better place for chat.</p>
         </div>
     </header>
 
     <div class="side-bar">
         <div class="top">
-            <div class="options" onclick="window.location.assign('/botsapp/')"> <!-- change location  '/'-->
+            <div class="options" title="Personal">
                 <div class="img">
-                    <img src="img/icons/chat-30.png" alt="Chat">
+                    <img src="img/icons/chat-30.png" alt="Chat" >
                 </div>
-                <h6>Personal</h6>
+                
             </div>
             
-            <div class="options" onclick="window.location.assign('/botsapp/group_chat.php')">   <!-- change location  '/group_chat.php'-->
+            <div class="options" title="Groups"> 
                 <div class="img">
                     <img src="img/icons/group_chat-48.png" alt="Group">
                 </div>
-                <h6>Groups</h6>
             </div>
         </div>
         
         <div class="bottom">
-            <div class="options">
+            <div class="options" title="Settings">
                 <div class="img">
-                    <img src="img/icons/share-24.png" alt="Settings">
-                </div>
-            </div>
-    
-            <div class="options">
-                <div class="img">
-                    <img src="img/icons/setting-24.png" alt="Settings">
+                    <img src="img/icons/setting-24.png"> 
                 </div>
             </div>
             
-            <div class="options profile">
+            <div class="options profile"  title="Profile">
                 <div class="img">
-                    <img src="img/icons/default_dp.png" alt="Settings">
+                    <img src="img/icons/default_dp.png">    <!-- insert php code to change profile img and title -->
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="chat-container">
+    <div class="chat-box">
+        <div class="chat-list">
+            fddfddsddddddddddddddssddddddddddd
+        </div>
+        <div class="chat">
 
+        </div>
     </div>
     
 </body>
