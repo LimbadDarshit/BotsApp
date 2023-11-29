@@ -8,11 +8,11 @@
     
     <link rel="icon" href="img/botsapp_white.png" type="image/png">
 
-    <!-- Style -->
+    <!-- Style -->  
     <link rel="stylesheet" href="css/interface.css" type="text/css">
     <!-- Script -->
     <script type="text/javascript" src="js/interface.js"></script>
-
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
 </head>
 <body>
     <header>
@@ -25,14 +25,16 @@
 
     <div class="side-bar">
         <div class="top">
-            <div class="options" title="Personal">
+            <!-- Personal -->
+            <div class="options" title="Personal" onclick="tohomepage()">
                 <div class="img">
                     <img src="img/icons/chat-30.png" alt="Chat" >
                 </div>
                 
             </div>
             
-            <div class="options" title="Groups"> 
+            <!-- group -->
+            <div class="options" title="Groups" onclick="togroupchat()"> 
                 <div class="img">
                     <img src="img/icons/group_chat-48.png" alt="Group">
                 </div>
@@ -40,12 +42,15 @@
         </div>
         
         <div class="bottom">
+        
+            <!-- settings -->
             <div class="options" title="Settings">
                 <div class="img">
                     <img src="img/icons/setting-24.png"> 
                 </div>
             </div>
             
+            <!-- profile -->
             <div class="options profile"  title="Profile">
                 <div class="img">
                     <img src="img/icons/default_dp.png">    <!-- insert php code to change profile img and title -->
@@ -54,10 +59,21 @@
         </div>
     </div>
 
+    <!-- chat-box -->
     <div class="chat-box">
+        <!-- chat-list -->
         <div class="chat-list">
-            fddfddsddddddddddddddssddddddddddd
+
+            <!-- search-box -->
+            <div class="search">
+                <form action="#" method="post">
+                    <input type="search" name="seach" placeholder="search">
+                </form>
+            </div>
+        
         </div>
+
+        <!-- opened-chat -->
         <div class="chat">
 
         </div>
