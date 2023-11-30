@@ -1,6 +1,6 @@
 <!-- bots app -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,13 +64,20 @@
         <!-- chat-list -->
         <div class="chat-list">
 
+            <div class="page-name">
+                <h2 id="cname"></h3>
+            </div>
+            
+            <div class="hr"></div>
+            
             <!-- search-box -->
             <div class="search">
-                <form action="#" method="post">
-                    <input type="search" name="seach" placeholder="search">
-                </form>
+                <div>
+                    <form action="#" method="post">
+                        <input type="search" name="seach" placeholder="search">
+                    </form>
+                </div>
             </div>
-        
         </div>
 
         <!-- opened-chat -->
