@@ -1,14 +1,14 @@
 :root   {
-    --list-bg-visi-164 : rgba(103, 103, 103, 0.164);
-    --list-bg-vis-22 : rgba(103, 103, 103, 22%);
-    --list-bg-vis-0 : rgba(103, 103, 103, 0); 
+    --list-box-bg : rgb(33, 32, 32);
+    --list-box-bg : rgb(33, 32, 32);
 }
 
 *{
-    background-color:rgb(1, 12, 23);
     color: aliceblue;
     user-select: none;
 }
+
+b
 
 header  {
     display: block;
@@ -124,9 +124,9 @@ header .title p {
     width: 90%;
     margin: 5px;
     transform: translate( 70px , 10px);
-    border: 4px solid var(--list-bg-visi-164);
+    border: 4px solid var(--list-box-bg);
     border-radius: 10px;
-    background-color: var(--list-bg-visi-164);
+    
 }
 
 
@@ -138,17 +138,17 @@ header .title p {
     padding: 6px;
     margin: inherit;
     border-radius: 10px 0 0 10px;
-    background-color: rgba(103, 103, 103, 0.068);
+    
 }
 
 .chat-box .chat-list .page-name{
     display: block;
     position: relative;
-    background-color: var(--list-bg-visi-0);
+    
 }
 
 .chat-box .chat-list .page-name #cname{
-    background-color: var(--list-bg-visi-0);
+    
     padding: 0%;
     margin: 15px;
 }
@@ -167,7 +167,7 @@ header .title p {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:var(--list-bg-vis-22);
+    background-color:var(--list-box-bg);
     
 }
 
@@ -187,4 +187,40 @@ header .title p {
 .chat-box .chat-list .search form input:focus   {
     border-color: blueviolet;
     transition: 1s border cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.list  {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+}
+
+.list .img  {
+    
+
+}
+
+.list .img img {
+    display: block;
+    padding: 0px;
+    margin: 7px;
+    
+    border-radius: 100%;
+    border: 1px solid whitesmoke;
+}
+
+.list .details {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    background-color: var(--list--bg);
+    margin: 2px;
+}
+
+.list .details h5,p{
+    margin: 2px;
+    
 }
