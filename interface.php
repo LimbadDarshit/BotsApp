@@ -78,6 +78,19 @@
                     </form>
                 </div>
             </div>
+
+            <!-- use php to get list from db -->
+            <table class="list"> 
+                <tr>
+                    <div class="img">
+                        <img src="img/default_dp.png">
+                    </div>
+                    <div class="details">
+                        <h5>Name</h5>   <br>
+                        <p>last chat here,</p>
+                    </div>
+                </tr>
+            </table>
         </div>
 
         <!-- opened-chat -->
