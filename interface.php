@@ -15,7 +15,7 @@
     <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
 </head>
 <body>
-    <header class="bg_black">
+    <header>
         <div class="title">
             <img src="img/botsapp_white.png" onclick="tohomepage()">
             <h1 onclick="tohomepage()">BotsApp</h1>
@@ -23,7 +23,7 @@
         </div>
     </header>
 
-    <div class="side-bar bg_black">
+    <div class="side-bar">
         <div class="top">
             <!-- Personal -->
             <div class="options" title="Personal" onclick="tohomepage()">
@@ -60,7 +60,7 @@
     </div>
 
     <!-- chat-box -->
-    <div class="chat-box bg_box">
+    <div class="chat-box">
         <!-- chat-list -->
         <div class="chat-list">
 
@@ -80,29 +80,16 @@
             </div>
 
             <!-- use php to get list from db -->
-            <table class="list" > 
-                <tbody>
-                    <tr>
-                        <td class="img">
-                            <img src="img/default_dp.png">
-                        </td>
-                        <td class="details">
-                            <h5>Name</h5>   <br>
-                            <p>last chat here,</p>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td class="img">
-                            <img src="img/default_dp.png">
-                        </td>
-                        <td class="details">
-                            <h5>darshit</h5>   <br>
-                            <p>last chat here,</p>
-                        </td>
-                    </tr>
-                </tbody>
-
+            <table class="list"> 
+                <tr>
+                    <div class="img">
+                        <img src="img/default_dp.png">
+                    </div>
+                    <div class="details">
+                        <h5>Name</h5>   <br>
+                        <p>last chat here,</p>
+                    </div>
+                </tr>
             </table>
         </div>
 
