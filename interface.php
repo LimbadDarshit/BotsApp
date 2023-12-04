@@ -72,24 +72,172 @@
             
             <!-- search-box -->
             <div class="search">
-                <div>
                     <form action="#" method="post">
                         <input type="search" name="seach" placeholder="search">
                     </form>
-                </div>
             </div>
 
             <!-- use php to get list from db -->
             <table class="list"> 
-                <tr>
-                    <div class="img">
-                        <img src="img/default_dp.png">
-                    </div>
-                    <div class="details">
-                        <h5>Name</h5>   <br>
-                        <p>last chat here,</p>
-                    </div>
-                </tr>
+                <tbody class="scroll">
+                    <tr>
+                        <td>
+                            <div class="img">
+                                <img src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5>Name</h5>   <br>
+                                <p>last chat here,</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="img">
+                                <img src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5>Name</h5>
+                                <p>lastddddsdsashdfsdfffffffffffffffffffffffffffffffdfdere,</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="img">
+                                <img src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5>Name</h5>
+                                <p>lastddddsdsashdfsdfffffffffffffffffffffffffffffffdfdere,</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="img">
+                                <img src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5>Name</h5>
+                                <p>lastddddsdsashdfsdfffffffffffffffffffffffffffffffdfdere,</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="img">
+                                <img src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5>Name</h5>   <br>
+                                <p>last chat here,</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="img">
+                                <img src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5>Name</h5>   <br>
+                                <p>last chat here,</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="img">
+                                <img src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5>Name</h5>   <br>
+                                <p>last chat here,</p>
+                            </div>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <div class="img">
+                                <img src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5>Name</h5>   <br>
+                                <p>last chat here,</p>
+                            </div>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <div class="img">
+                                <img src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5>Name</h5>   <br>
+                                <p>last chat here,</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="img">
+                                <img src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5>Name</h5>   <br>
+                                <p>last chat here,</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="img">
+                                <img src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5>Name</h5>   <br>
+                                <p>last chat here,</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="img">
+                                <img src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5>Name</h5>   <br>
+                                <p>last chat here,</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="img">
+                                <img src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5>Name</h5>   <br>
+                                <p>last chat here,</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
 
