@@ -81,8 +81,19 @@
             <table class="list"> 
                 <tbody class="scroll">
                     <tr>
-                        <td>
-                            <div class="img">
+                        <td class="skeleton">
+                            <div class="img ">
+                                <img src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5>Name</h5>   <br>
+                                <p>last chat here,</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="skeleton">
+                            <div class="img ">
                                 <img src="img/default_dp.png">
                             </div>
                             <div class="details">

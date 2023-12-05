@@ -3,11 +3,30 @@
     --list-bg : rgb(69, 67, 67);
 }
 
-
 body{
     background-color:rgb(1, 12, 23);
     color: aliceblue;
     user-select: none;
+}
+
+.skeleton   {
+    
+    animation: skeleton 1s infinite alternate linear;
+    z-index: 0;
+}
+
+@keyframes skeleton {
+    0%  {
+        background-color: rgb(46, 46, 46);
+    }
+    
+    100%  {
+        background-color: rgb(72, 72, 72);
+    }
+}
+
+.stop-animation {
+    animation: none !important;
 }
 
 ::-webkit-scrollbar {
@@ -212,7 +231,6 @@ header .title p {
 .scroll {
     display: block ;
     overflow-y: auto;
-    height: 520px;
     overflow-x: hidden;
 }
 
@@ -220,6 +238,7 @@ header .title p {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    max-height: 80%;
     background-color: var(--list-box-bg);
     
 }
@@ -253,7 +272,7 @@ header .title p {
     margin: 2px;
 }
 
-.list h5,p{
+.list h5,.list p{
     margin: 2px;
     background-color: var(--list-box-bg);
     user-select: text;
