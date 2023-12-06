@@ -6,12 +6,17 @@ document.addEventListener('DOMContentLoaded' , function () {
     const ani_ele = document.querySelectorAll('.list img , .list h5 , .list p');
             // animation elements
     ani_ele.forEach(function (element) {
-        element.classList.add('stop-animation');
-        console.log(element);
+        element.classList.remove('skeleton');
+        element.classList.remove('skeleton-text');
     });
-    console.log(ani_ele);
 
-    // skeleton end
+    // texter chat select
+    const texter = document.querySelectorAll(".texter");
+    for (var i = 0; i < texter.length; i++) {
+        texter[i].addEventListener('click', function () {
+            this.classList.add('select');
+        });
+    }
 
 });
 
@@ -24,4 +29,3 @@ function tohomepage()   {
 function togroupchat()  {
     window.location.assign('/botsapp/group_chat.php');
 }
-// nav end
