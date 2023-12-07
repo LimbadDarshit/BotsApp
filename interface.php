@@ -112,6 +112,28 @@
                             </div>
                         </td>
                     </tr>
+                    <tr>
+                        <td class="texter">
+                            <div class="img">
+                                <img class="skeleton" src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5 class="skeleton skeleton-text">Name</h5>
+                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="texter">
+                            <div class="img">
+                                <img class="skeleton" src="img/default_dp.png">
+                            </div>
+                            <div class="details">
+                                <h5 class="skeleton skeleton-text">Name</h5>
+                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                            </div>
+                        </td>
+                    </tr>
 
                 </tbody>
             </table>

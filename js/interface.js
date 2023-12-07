@@ -11,12 +11,13 @@ document.addEventListener('DOMContentLoaded' , function () {
     });
 
     // texter chat select
-    const texter = document.querySelectorAll(".texter");
-    for (var i = 0; i < texter.length; i++) {
-        texter[i].addEventListener('click', function () {
-            this.classList.add('select');
-        });
-    }
+    // const texter = document.querySelectorAll(".texter");
+    // for (var i = 0; i < texter.length; i++) {
+    //     texter[i].addEventListener('click', function () {
+    //         this.classList.add('select');
+    //     });
+        
+    // }
 
 });
 
