@@ -1,6 +1,9 @@
 :root   {
+    --options-selected-border : 1.5px solid rgba(155, 155, 155, 0.37);
+    --options-selected-border-left:5px solid rgba(137, 43, 226, 0.854);
     --list-box-bg : rgb(33, 32, 32);
-    --list-bg : rgb(69, 67, 67);
+    --list-bg : rgb(53, 51, 51);
+    --border-radius :  0px 10px;
 }
 
 body{
@@ -79,18 +82,6 @@ header .title p {
     transform: translateX(100px);
 }
 
-.side-bar .top .options:nth-child(0) > .img {
-    border: 1.5px solid rgba(155, 155, 155, 0.37);
-    border-left: 5px solid rgba(137, 43, 226, 0.854);
-}
-
-.side-bar .bottom .options:nth-child(0) > .img {
-    height: 31px;
-    width: 31px;
-    background-color: rgba(80, 79, 79, 0.623);
-    filter: brightness(150%);
-}
-
 .side-bar   {
     display: block;
     position: fixed;
@@ -163,6 +154,80 @@ header .title p {
     transform: translateX(-7%);
 }
 
+.side-bar .top .options:nth-child(0) > .img {
+    border: var(--options-selected-border);
+    border-left: var(--options-selected-border-left);
+    border-radius: var(--border-radius);
+}
+
+.settings-box   {
+    display: block;
+    box-sizing: border-box;
+    position: fixed;
+    left: 10px;
+    height: 500px;
+    width: 500px;
+    z-index: 1;
+    border-radius: var(--border-radius);
+    background-image: linear-gradient(to right , rgba(6, 27, 48, 0.2) 30% , rgb(6 27 48 / 39%));
+    transition: bottom .5s cubic-bezier(0, 0.81, 0.27, 1.02) ;
+}
+
+.settings-box_hide  {
+    opacity: 0%;
+    bottom: -600px;
+    transition:   bottom .5s cubic-bezier(0, 0.81, 0.27, 1.02) , opacity .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.settings-box_show  {
+    opacity: 100%;
+    bottom: 10px;
+}
+
+.settings-box ul {    
+    height: calc(100% - 28px);
+    width: 130px;
+    background-color: rgba(25, 45, 65, 0.69);
+    border-radius: var(--border-radius);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4) , -5px -5px 10px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
+    padding: 7px;
+    margin: 7px;
+    list-style-type: none;
+}
+
+.settings-box ul li {
+    height: 30px;
+    width: auto;
+    margin: 10px 0;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.settings-box ul li:hover   {
+    opacity: 80%;
+}
+
+.settings-box ul li:hover , .settings-box .selected {
+    background-color: rgba(0, 0, 0, 0.687);
+    box-shadow: 1px 1px 5px rgba(137, 43, 226, 0.2);
+    border-radius: var(--border-radius);
+    transition: background-color opacity .2s ease-in-out;
+}
+
+.settings-box .selected > div img  {
+    height: 18px;
+    width: 18px;
+}
+
+.settings-box .selected {
+    border-left: var(--options-selected-border-left);
+}
+
+.settings-box ul li div {
+    padding: 0 10px 0 5px;
+}
+
 .chat-box {
     display: block;
     position: absolute;
@@ -176,33 +241,33 @@ header .title p {
 }
 
 
-.chat-box .chat-list {
+.chat-box .inbox {
     box-sizing: border-box;
     display: block;
     position: fixed;
     height: calc(96% + 5px);
-    width: 28%;
+    width: 25%;
     padding: 6px;
     margin: inherit;
-    border-radius: 10px 0 0 10px;
+    border-radius:var(--border-radius);
     background-color: var(--list-box-bg);
     outline: 2px solid rgb(1, 12, 23);
    
 }
 
-.chat-box .chat-list .page-name{
+.chat-box .inbox .page-name{
     display: block;
     position: relative;
     background-color: var(--list-box-bg);
 }
 
-.chat-box .chat-list .page-name #cname{
+.chat-box .inbox .page-name #cname{
     background-color: var(--list-box-bg);
     padding: 0%;
     margin: 15px;
 }
 
-.chat-box .chat-list .hr{
+.chat-box .inbox .hr{
     height: 1.5px;
     width: calc(100% + 10px);
     margin: 6px 0px;
@@ -210,7 +275,7 @@ header .title p {
     background-color: rgba(240, 248, 255, 0.423);
 }
 
-.chat-box .chat-list .search   {
+.chat-box .inbox .search   {
     height: auto;
     width: auto;
     display: flex;
@@ -220,7 +285,7 @@ header .title p {
     
 }
 
-.chat-box .chat-list .search input{
+.chat-box .inbox .search input{
     height: 30px;
     width: 80%;
     font-size: 15px;
@@ -234,7 +299,7 @@ header .title p {
     color: rgba(255, 255, 255, 0.756);
 }
 
-.chat-box .chat-list .search input:focus   {
+.chat-box .inbox .search input:focus   {
     border-color: blueviolet;
     transition: 1s border cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -256,7 +321,7 @@ header .title p {
     
 }
 
-.list .texter  {
+ .list .inbox-user  {
     display: flex;
     width: 95%;
     padding: 5px;
@@ -265,7 +330,7 @@ header .title p {
     align-content: center;
 }
 
-.list .texter:hover , .select {
+.list .inbox-user:hover , .select {
     background-color: rgba(110, 110, 110, 0.218);
 }
 

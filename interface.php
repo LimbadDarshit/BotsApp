@@ -26,9 +26,9 @@
     <div class="side-bar">
         <div class="top">
             <!-- Personal -->
-            <div class="options" title="Personal" onclick="tohomepage()">
+            <div class="options" title="Personal" onclick="tohomepage()" >
                 <div class="img">
-                    <img src="img/icons/chat-30.png" alt="Chat" >
+                    <img src="img/icons/options/chat-30.png" alt="Chat" >
                 </div>
                 
             </div>
@@ -36,111 +36,57 @@
             <!-- group -->
             <div class="options" title="Groups" onclick="togroupchat()"> 
                 <div class="img">
-                    <img src="img/icons/group_chat-48.png" alt="Group">
+                    <img src="img/icons/options/group_chat-48.png" alt="Group">
                 </div>
             </div>
         </div>
         
         <div class="bottom">
-        
             <!-- settings -->
-            <div class="options" title="Settings">
+            <div class="options" title="Settings" onclick="toggle_settings_box()">
                 <div class="img">
-                    <img src="img/icons/setting-24.png"> 
+                    <img src="img/icons/options/setting-24.png"> 
                 </div>
             </div>
             
             <!-- profile -->
             <div class="options profile"  title="Profile">
                 <div class="img">
-                    <img src="img/icons/default_dp.png">    <!-- insert php code to change profile img and title -->
+                    <img src="img/default_dp.png">    <!-- insert php code to change profile img and title -->
                 </div>
             </div>
         </div>
     </div>
+    <!-- settings-box -->
+    <div class="settings-box settings-box_hide">
+        <ul>
+            <li class="selected">
+                <div>
+                    <img src="img/icons/settings/general/general-64.png" height="20px" width="20px" alt="" >
+                </div>    
+                <p>General</p>
+            </li>
+            <li class="">
+                <div>
+                    <img src="img/icons/settings/general/account-64.png" height="20px" width="20px" alt="" >
+                </div>    
+                <p>Account</p>
+            </li>
+            <li class="">
+                <div>
+                    <img src="img/icons/settings/general/chat-64.png" height="20px" width="20px" alt="" >
+                </div>    
+                <p>Chat</p>
+            </li>
+            <li class="">
+                <div>
+                    <img src="img/icons/settings/general/help-64.png" height="20px" width="20px" alt="" >
+                </div>    
+                <p>Help</p>
+            </li>
+        </ul>
 
-    <!-- chat-box -->
-    <div class="chat-box">
-        <!-- chat-list -->
-        <div class="chat-list">
-
-            <div class="page-name">
-                <h2 id="cname"></h3>
-            </div>
-            
-            <div class="hr"></div>
-            
-            <!-- search-box -->
-            <div class="search">
-                <input type="search" name="seach" placeholder="search" autocomplete="off">
-            </div>
-
-            <!-- use php to get list from db -->
-            <table class="list"> 
-                <tbody class="scroll">
-
-                    <tr>
-                        <td class="texter">
-                            <div class="img">
-                                <img class="skeleton" src="img/default_dp.png">
-                            </div>
-                            <div class="details">
-                                <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="texter">
-                            <div class="img">
-                                <img class="skeleton" src="img/default_dp.png">
-                            </div>
-                            <div class="details">
-                                <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="texter">
-                            <div class="img">
-                                <img class="skeleton" src="img/default_dp.png">
-                            </div>
-                            <div class="details">
-                                <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="texter">
-                            <div class="img">
-                                <img class="skeleton" src="img/default_dp.png">
-                            </div>
-                            <div class="details">
-                                <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="texter">
-                            <div class="img">
-                                <img class="skeleton" src="img/default_dp.png">
-                            </div>
-                            <div class="details">
-                                <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
-                            </div>
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
-        </div>
-
-        <!-- opened-chat -->
-        <div class="chat">
+        <div class="">
 
         </div>
     </div>
