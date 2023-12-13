@@ -161,7 +161,7 @@ header .title p {
 }
 
 .settings-box   {
-    display: block;
+    display: flex;
     box-sizing: border-box;
     position: fixed;
     left: 10px;
@@ -169,7 +169,7 @@ header .title p {
     width: 500px;
     z-index: 1;
     border-radius: var(--border-radius);
-    background-image: linear-gradient(to right , rgba(6, 27, 48, 0.2) 30% , rgb(6 27 48 / 39%));
+    background-image: linear-gradient(to right , rgba(6, 27, 48, 0.426) 30% , rgba(6, 27, 48, 0.625));
     transition: bottom .5s cubic-bezier(0, 0.81, 0.27, 1.02) ;
 }
 
@@ -200,8 +200,13 @@ header .title p {
     width: auto;
     margin: 10px 0;
     padding: 3px;
+    position: relative;
     display: flex;
     align-items: center;
+}
+
+.settings-box ul li:last-child {
+    bottom: -52%;
 }
 
 .settings-box ul li:hover   {
@@ -226,6 +231,191 @@ header .title p {
 
 .settings-box ul li div {
     padding: 0 10px 0 5px;
+}
+
+.settings-box .settings-container {
+    height: calc(100% - 28px);
+    width: 65%;
+    border-radius: var(--border-radius);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4) , -5px -5px 10px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
+    padding: 7px;
+    margin: 7px;
+    background-color: rgba(25, 45, 65, 0.836);
+    color: rgb(205, 205, 205);
+
+}
+
+.settings-box .settings-container .body{
+    display: block;
+    position: absolute;
+    margin: 17px;
+    height: auto;
+    width: 90%;
+}
+
+.settings-box .settings-container .body .headding   {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    border-bottom: 2px solid rgba(208, 229, 248, 0.149);
+}
+
+.settings-box .settings-container .body .checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.settings-box .settings-container .body .checkbox input[type='checkbox']   {
+    appearance: none;    
+    height: 20px;
+    width: 20px;
+    border: 2px solid rgba(183, 221, 255, 0.3);
+    margin-right: 10px;
+    transition: all 0.5s cubic-bezier(0, 0.81, 0.27, 1.02);
+
+}
+.settings-box .settings-container .body .checkbox input[type='checkbox']::after    {
+    content: "";
+    height: 10px;
+    width: 5px;
+    position: relative;
+    display: none;
+    transform: rotate(45deg);
+    border-bottom: 2px solid aliceblue;
+    border-right: 2px solid aliceblue;
+    left: 5px;
+}
+
+.settings-box .settings-container .body .checkbox input[type='checkbox']:hover    {
+    background-color: rgba(0, 0, 0, 0.649);
+}
+
+.settings-box .settings-container .body .checkbox input[type='checkbox']:checked  {
+    background-color: green;
+}
+
+.settings-box .settings-container .body .checkbox input[type='checkbox']:checked::after  {
+    display: flex;
+}
+
+.settings-box .settings-container .body .swipe-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px;
+    font-size: 17px;
+}
+
+.settings-box .settings-container .body .swipe-box input[type='checkbox']   {
+    appearance: none;    
+    height: 31px;
+    width: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 2px;
+    margin-right: 10px;
+    border: 2px solid rgba(183, 221, 255, 0.3);
+    background-color: rgba(63, 63, 63, 0.4);
+    border-radius: 15.5px;
+    transition: all .5s cubic-bezier(0, 0.27, 0.85, 1.17);
+
+}
+
+.settings-box .settings-container .body .swipe-box input[type='checkbox']::after  {
+    content: "";
+    height: 20px;
+    width: 20px;
+    position: relative;
+    border:2px solid rgba(240, 248, 255, 0.9);
+    border-radius: 100%;
+    background-color:rgba(162, 162, 162, 0.9);
+}
+
+.settings-box .settings-container .body .swipe-box input[type='checkbox']:checked   {
+    background-color: rgba(225, 223, 255, 0.9);
+}
+
+.settings-box .settings-container .body .swipe-box input[type='checkbox']:checked::after  {
+   left:29px;
+   background-color: rgb(12, 12, 12);
+   animation: swipe .5s cubic-bezier(0, 0.27, 0.85, 1.17) ;
+}
+
+@keyframes swipe {
+    0%  {
+        height: 20px;
+        width: 20px;
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(8px);
+        height: 18px;
+        width: 18px;
+    }
+    100%{
+       
+        height: 20px;
+        width: 20px;
+    }
+}
+
+.settings-box .settings-container .body .profile-dp img{
+    border-radius: 100%;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+}
+
+.settings-box .settings-container .body .flex{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 30px;
+}
+
+.settings-box .settings-container .body .text{
+    width: 80% !important;
+    max-width: 80%;
+    max-height: 30px;
+    margin: 3px 0;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    user-select: text;
+}
+
+.settings-box .settings-container .body .flex .edit {
+    border: 1px solid rgba(255, 255, 255, 0.373);
+    border-radius: 5.5px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.64);
+}
+
+.settings-box .settings-container .body .flex .edit-icon{
+    height:20px;
+    width:20px;
+    position: fixed;
+    padding: 3px;
+    margin: 0px 10px;
+    right: 0;
+}
+.settings-box .settings-container .body .flex .edit-icon:hover {
+    background-color: rgba(161, 161, 161, 0.58);
+    border-radius: 3px;
+    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.settings-box .settings-container .body .link {
+    color:rgb(3, 218, 3);
+    text-decoration: none;
+    filter: brightness(100%);
+}
+
+.settings-box .settings-container .body .link:hover{
+    color: green;
 }
 
 .chat-box {
