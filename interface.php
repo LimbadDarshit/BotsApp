@@ -50,7 +50,7 @@
             </div>
             
             <!-- profile -->
-            <div class="options profile"  title="Profile" onclick="toggle_settings_box()">
+            <div class="options profile"  title="Profile" onclick="toggle_settings_box()" accesskey="p">
                 <div class="img">
                     <img src="img/default_dp.png">    <!-- insert php code to change profile img and title -->
                 </div>
@@ -60,7 +60,7 @@
     <!-- settings-box -->
     <div class="settings-box settings-box_hide">
         <ul>
-            <li class="selected" name="general">
+            <li class="" name="general">
                 <div>
                     <img src="img/icons/settings/general-64.png" height="20px" width="20px" alt="" >
                 </div>    
@@ -138,11 +138,11 @@
 
                 <h3>Chat Wallpaper</h3>
 
-                <a href="wallpaper.php?type=add_new" target="_blank" class="link">Change Wallpaper</a>
+                <a href="wallpaper.php?type=add_new" class="link">Change Wallpaper</a>
 
                 <br><br>
 
-                <a href="wallpaper.php?type=set_default" target="_blank" class="link">Set Default BotsApp Wallpaper</a>
+                <a href="wallpaper.php?type=set_default" class="link">Set Default BotsApp Wallpaper</a>
 
             </div>
 
@@ -172,13 +172,13 @@
                 <br>
                 <form action="functionality/edit.php?edit=name" method="post" class="flex" name="edit-user-name">
                     <input type="text" name="user-name" class="text" style="font-size: 15px;" placeholder="Enter User Name" value="Darshit_limbad" disabled /> 
-                    <img name="edit-icon" class="edit-icon" src="img/icons/settings/profile/edit.png" /> 
+                    <img name="edit-icon" class="edit-icon" src="img/icons/settings/profile/edit.png" title="edit"/>  
                 </form>
                 
                 <p>About</p>
                 <form action="functionality/edit.php?edit=name" method="post" class="flex" name="edit-about">
                     <textarea name="about" class="text" style="font-size: 13px;min-height: 30px;" placeholder="Enter About Yourself" disabled>Limbad darshit.</textarea>
-                    <img name="edit-icon" class="edit-icon" src="img/icons/settings/profile/edit.png" /> 
+                    <img name="edit-icon" class="edit-icon" src="img/icons/settings/profile/edit.png" title="edit" /> 
                 </form>
 
                 <p>E-mail</p>
