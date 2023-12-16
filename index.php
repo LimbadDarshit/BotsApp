@@ -16,7 +16,7 @@
         <div class="inbox">
 
             <div class="page-name">
-                <h2 id="cname"></h3>
+                <h2 id="cname"></h2>
             </div>
             
             <div class="hr"></div>

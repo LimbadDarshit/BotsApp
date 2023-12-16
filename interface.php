@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="icon" href="img/botsapp_white.png" type="image/png">
-
     <!-- Style -->  
     <link rel="stylesheet" href="css/interface.css" type="text/css">
     <!-- Script -->
@@ -22,7 +21,6 @@
             <p>-A Better place for chat.</p>
         </div>
     </header>
-
     <div class="side-bar">
         <div class="top">
             <!-- Personal -->

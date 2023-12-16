@@ -1,0 +1,117 @@
+:root {
+    --user-box-height : 30rem;
+    --user-box-width : 30rem;
+    --text-color : rgb(89, 43, 226);
+}
+
+body{
+    background-image:linear-gradient( to bottom right ,  rgba(1, 18, 35, 0.97) 30%, rgb(5, 33, 60) );
+    color: aliceblue;
+    user-select: none;
+    background-size: 200% 110%;
+    overflow: hidden;
+    animation: bg-animation 2s alternate infinite ease-out;
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 90% ;
+    }
+}
+
+
+.square-container   {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.square {
+    height: 6rem;
+    width: 6rem;
+    border: 2px solid white;
+    margin: 10px;
+    opacity: 20%;
+    transition: background-color .2s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.square:hover   {
+    background-color: blueviolet;
+}
+
+.box {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: var(--user-box-height);
+    width: var(--user-box-width);
+    top: calc(50% - (var(--user-box-height) / 2) );
+    left: calc(50% - (var(--user-box-width) / 2));
+    background-color: rgba(0, 42, 70, 0.9);
+    border: 5px solid rgb(5, 33, 60);
+    color: var(--text-color);
+    border-radius: 30px;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+}
+
+.box .heading h1{
+    font-size: 1.5rem;
+}
+
+.box .heading p{
+    font-size: .8rem;
+}
+
+.input-field    {
+    height: 4rem;
+    width: auto;
+    text-align: start;
+    color: var(--text-color);
+    color: aliceblue;
+}
+
+.input-field .input input{
+    height: 1rem;
+    width: 20rem;
+    position: relative;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    font-size: 1rem;
+    border-bottom: 2px solid aliceblue;
+    border-radius: none;
+    top:15px;
+    color: aliceblue;
+}
+
+.input-field .input input:focus{
+    border-color: var(--text-color);
+    transition: border-color .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.input-field label{
+    display: block;
+    position: relative;
+    z-index: 1;
+    top: -15px;
+    left: 10px;
+    font-size: .8rem;
+}
+
+.input-field .input input:focus + label , input:not(:placeholder-shown)+label    {
+    transform: translate(-10px , -20px);
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
