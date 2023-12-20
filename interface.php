@@ -149,15 +149,15 @@
                 <p>So how is your experience using BotsApp web-app?</p>
                 <p>Better then our competitor right?</p>
                 <p>share your experience...</p>
-                <a href="ux/index.php?form=feedback" target="_blank" class="link">Feedback Here</a>
+                <a href="help/ux.php?form=feedback" target="_blank" class="link">Feedback Here</a>
             
                 <br><br>
 
                 <div class="headding">Found any bugs?</div>
                 <p>If you recently noticed any bug or mistacks by me please share it here,</p>
                 <p>It will be very helpfull for me</p>
-                <p>Thanks for helping :)</p>
-                <a href="ux/index.php?form=bugs" target="_blank" class="link">Bugs Report</a>
+                <p>Thanks for helping :&#41</p>
+                <a href="help/ux.php?form=bugs" target="_blank" class="link">Bugs Report</a>
             </div>
 
             <div class="body" name="profile-body" style="display: none;">

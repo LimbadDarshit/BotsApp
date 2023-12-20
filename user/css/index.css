@@ -13,6 +13,7 @@ body{
     animation: bg-animation 2s alternate infinite ease-out;
 }
 
+
 @keyframes bg-animation {
     0% {
         background-position: 0% 0%;
@@ -72,11 +73,13 @@ body{
 }
 
 .input-field    {
-    height: 4rem;
+    height: auto;
     width: auto;
     text-align: start;
     color: var(--text-color);
     color: aliceblue;
+    margin: 5px;
+    padding: 5px;
 }
 
 .input-field .input input{
@@ -95,23 +98,94 @@ body{
     color: aliceblue;
 }
 
-.input-field .input input:focus{
-    border-color: var(--text-color);
-    transition: border-color .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+.input-field .input input:hover {
+    box-shadow: -2px -2px 10px rgba(89, 43, 226, 0.1);
 }
 
-.input-field label{
+.input-field .input input:focus , .input-field .input input:not(:placeholder-shown){
+    border-color: var(--text-color) !important;
+    transition: border-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.input-field label  {
+    width: 50%;
     display: block;
     position: relative;
     z-index: 1;
     top: -15px;
     left: 10px;
-    font-size: .8rem;
+    font-size: 0.8rem;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.input-field .input input:focus + label , input:not(:placeholder-shown)+label    {
+.input-field .input input:focus + label ,.input-field .input input:not(:placeholder-shown) + label    {
     transform: translate(-10px , -20px);
-    font-size: 1rem;
     color: var(--text-color);
-    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
+.input-field .name{
+   
+    justify-content: space-between;  
+}
+
+.input-field .name input{
+    width: 50%;
+}
+
+.input-field .name label  {
+    width: 50%;
+    top: 20px;
+    left: -120px;
+    font-size: 0.8rem;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.input-field img[name="eye"] {
+    display: block;
+    position: relative;
+    transform: translate(305px , 42px);
+    z-index: 1;
+}
+
+.input-field .submit input[name="submit"]   {
+    height: 2rem;
+    width: 30%;
+    margin: 5px 20%;    
+    color: aliceblue ;
+    background-image: linear-gradient(to bottom right , rgb(89, 43, 226) ,rgba(33, 16, 84, 0.797) , rgb(89, 43, 226) );
+    border-radius: 30px;
+    border: none;
+    --btn-shadow :rgba(240, 248, 255, 0.18);
+}
+
+.input-field .flip input[name="flip"]   {
+    height: 2rem;
+    width: 30%;
+    margin: 0px 60%;
+    color: rgba(0, 0, 0, 0.846);
+    background-image: linear-gradient(to bottom right , rgba(89, 43, 226, 0.8) ,rgba(132, 132, 132, 0.523) , rgba(89, 43, 226, 0.8  ));
+    border-radius: 30px;
+    border: none;
+    --btn-shadow: rgba(89, 43, 226, 0.373);
+
+}
+.input-field .submit input[name="submit"] , .input-field .register input[name="flip"] {
+    transition: all .5s cubic-bezier(0.215, 0.610, 0.355, 1);
+
+}
+.input-field .submit input[name="submit"]:hover , .input-field .flip input[name="flip"]:hover {
+    height: calc(2rem + 2px);
+    width: calc(30% + 2px);
+    transform: translate(-1px,-1px);
+    background-blend-mode: hard-light;
+    box-shadow: 2px 2px 30px var(--btn-shadow);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    font-size: 12px;
+}
+
+

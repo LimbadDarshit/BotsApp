@@ -409,14 +409,14 @@ header .title p {
     transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.settings-box .settings-container .body .link {
+.link {
     color:rgb(3, 218, 3);
     text-decoration: none;
     filter: brightness(100%);
 }
 
-.settings-box .settings-container .body .link:hover{
-    color: green;
+.link:hover{
+    color: rgb(0, 153, 0);
 }
 
 .chat-box {

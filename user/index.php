@@ -9,7 +9,7 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="../js/interface.js"></script>
 </head>
-<body>
+<body  onload="document.forms['form']['user'].focus()">
     <header style="background-color: rgb(5, 33, 60) ;">
         <div class="title">
             <img src="../img/botsapp_white.png" onclick="tohomepage()">
@@ -48,28 +48,50 @@
             <!-- user -->
             <div class="input-field">
                 <div class="input">
-                    <input type="text" id="user" name="user" placeholder=" "/>
+                    <input type="text" id="user" name="user" placeholder=" " autocomplete="off"/>
                     <label for="user">Enter Username / E-mail</label>
+                </div>
+            </div>
+            
+            <!-- Name -->
+            <div class="input-field">
+                <div class="input name">
+                    <input type="text" id="first-name" name="first-name" placeholder=" " autocomplete="off"/>
+                    <label for="first-name">Enter First Name</label>
+
+                    <input type="text" id="last-name" name="last-name" placeholder=" " autocomplete="off"/>
+                    <label for="last-name">Enter Last Name</label>
                 </div>
             </div>
             
             <!-- password -->
             <div class="input-field">
+                <img src="/botsapp/img/icons/form/eye.png" name="eye" class="eye" height="20px" width="20px"> 
                 <div class="input">
-                    <input type="password" id="pass" name="pass" placeholder=" "/>
+                    <!-- url change when uploading -->
+                    <input type="password" id="pass" name="pass" placeholder=" " autocomplete="off" />
                     <label for="pass">Password</label>
                 </div>
             </div>
             
-            <!-- submit -->
+            <!-- bUTTONS -->
             <div class="input-field">
                 <div class="submit">
-                    <input type="submit" name="user" value="Log-in"/>
+                    <input type="submit" name="submit" value="Log-in" spellcheck="false" />
+                </div>
+                <div class="flip">
+                    <input type="button" name="flip" value="Register">        
                 </div>
             </div>
             
         </form>
         
+        <footer>
+            <div>
+            All right reserverd by <a href="/t&c/policy.php" class="link">BotsApp</a>.
+            </div>
+            <a href="help/user-help.php?log-in" class="link">Need help?</a>
+        </footer>
         
     </div>
 </body>

@@ -57,16 +57,11 @@ function toggle_settings_box()   {
 
         settings_box.classList.add('settings-box_show');
         settings_box.classList.remove('settings-box_hide');
-        if(!event.target.closest("div[title='Profile']"))   {
-            var li = document.querySelector(".settings-box ul li[name='general']");
-            li.classList.add('selected');
-            show_setting_body(li);
-        }   else    {
-            var li = document.querySelector(".settings-box ul li[name='profile']");
-            li.classList.add('selected');
-            show_setting_body(li);
-        }
-        
+
+        var li = (!event.target.closest("div[title='Profile']")) ?document.querySelector(".settings-box ul li[name='general']") :  document.querySelector(".settings-box ul li[name='profile']");
+
+        li.classList.add('selected');
+        show_setting_body(li);
         document.addEventListener('click' , closesettingsbox);
 
     } else {

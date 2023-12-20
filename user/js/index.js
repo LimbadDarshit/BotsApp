@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded' , function () {
-    // cursor-bg-color-animation  c_loc-cursor location
-    document.addEventListener('mousemove' , function (c_loc) {
-       
-    });
-    
+    document.querySelector(".eye").addEventListener('click' , function (){
+        document.querySelector('#pass').type =  (pass.type == 'password') ? 'text' : 'password' ;
+        document.querySelector('#pass').focus();
+    });    
 });
