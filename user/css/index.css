@@ -9,10 +9,9 @@ body{
     color: aliceblue;
     user-select: none;
     background-size: 200% 110%;
-    overflow: hidden;
+    overflow: auto;
     animation: bg-animation 2s alternate infinite ease-out;
 }
-
 
 @keyframes bg-animation {
     0% {
@@ -23,6 +22,35 @@ body{
     }
 }
 
+.hide {
+    display: none !important;
+}
+
+:root{
+    --top : -30px;
+    --load-animation-speed:cubic-bezier(0, 0.94, 0.27, 1.2);
+}
+
+.fadeout {
+    top: var(--top);
+    opacity: 0;
+}
+
+.fadein {
+    position: relative;
+    animation: fade 700ms var(--load-animation-speed);
+}
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+        top: var(--top);
+    }
+    100%{
+        opacity: 1;
+        top: 0;
+    }
+}
 
 .square-container   {
     display: flex;
@@ -44,16 +72,16 @@ body{
 }
 
 .box {
+    height: var(--user-box-height);
+    width: var(--user-box-width);
+    top: calc(50% - (var(--user-box-height) / 2) );
+    left: calc(50% - (var(--user-box-width) / 2));
     display: flex;
     position: absolute;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    height: var(--user-box-height);
-    width: var(--user-box-width);
-    top: calc(50% - (var(--user-box-height) / 2) );
-    left: calc(50% - (var(--user-box-width) / 2));
     background-color: rgba(0, 42, 70, 0.9);
     border: 5px solid rgb(5, 33, 60);
     color: var(--text-color);
@@ -61,6 +89,8 @@ body{
     padding: 20px;
     overflow-x: hidden;
     overflow-y: auto;
+    opacity: 0;
+    transition: opacity 3s var(--load-animation-speed) ;
     
 }
 
@@ -72,9 +102,16 @@ body{
     font-size: .8rem;
 }
 
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .input-field    {
     height: auto;
     width: auto;
+    position: relative;
     text-align: start;
     color: var(--text-color);
     color: aliceblue;
@@ -91,7 +128,7 @@ body{
     border: none;
     padding: 5px;
     margin: 5px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     border-bottom: 2px solid aliceblue;
     border-radius: none;
     top:15px;
@@ -120,65 +157,65 @@ body{
 
 .input-field .input input:focus + label ,.input-field .input input:not(:placeholder-shown) + label    {
     transform: translate(-10px , -20px);
-    color: var(--text-color);
+    color: green;
 }
 
-.input-field .name{
-   
-    justify-content: space-between;  
+.name{
+    display: flex;
+    position: relative;
 }
 
-.input-field .name input{
-    width: 50%;
+.name input {
+    width: 9.5rem !important;
+    text-transform: capitalize;
 }
 
-.input-field .name label  {
-    width: 50%;
-    top: 20px;
-    left: -120px;
+.name label  {
+    width: 60%;
     font-size: 0.8rem;
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .input-field img[name="eye"] {
     display: block;
     position: relative;
-    transform: translate(305px , 42px);
+    top: 24px;
+    left:307px;
     z-index: 1;
 }
 
-.input-field .submit input[name="submit"]   {
+.input-field .submit input{
+    --margin : 5px 20%;
+    --color: aliceblue ;
+    --background-image: linear-gradient(to bottom right , rgb(89, 43, 226) ,rgba(33, 16, 84, 0.797) , rgb(89, 43, 226) );
+}
+
+.input-field .change input {
+    --margin: 0px 60%;
+    --color: rgba(0, 0, 0, 0.846);
+    --background-image: linear-gradient(to bottom right , rgba(89, 43, 226, 0.8) ,rgba(132, 132, 132, 0.523) , rgba(89, 43, 226, 0.8  ));
+    --btn-shadow: rgba(89, 43, 226, 0.373);
+}
+
+.input-field .button input  {
     height: 2rem;
     width: 30%;
-    margin: 5px 20%;    
-    color: aliceblue ;
-    background-image: linear-gradient(to bottom right , rgb(89, 43, 226) ,rgba(33, 16, 84, 0.797) , rgb(89, 43, 226) );
+    margin: var(--margin);    
+    color: var(--color) ;
+    background-image: var(--background-image);
     border-radius: 30px;
     border: none;
     --btn-shadow :rgba(240, 248, 255, 0.18);
-}
-
-.input-field .flip input[name="flip"]   {
-    height: 2rem;
-    width: 30%;
-    margin: 0px 60%;
-    color: rgba(0, 0, 0, 0.846);
-    background-image: linear-gradient(to bottom right , rgba(89, 43, 226, 0.8) ,rgba(132, 132, 132, 0.523) , rgba(89, 43, 226, 0.8  ));
-    border-radius: 30px;
-    border: none;
-    --btn-shadow: rgba(89, 43, 226, 0.373);
-
-}
-.input-field .submit input[name="submit"] , .input-field .register input[name="flip"] {
     transition: all .5s cubic-bezier(0.215, 0.610, 0.355, 1);
-
 }
-.input-field .submit input[name="submit"]:hover , .input-field .flip input[name="flip"]:hover {
+
+.input-field .button input:hover {
     height: calc(2rem + 2px);
     width: calc(30% + 2px);
     transform: translate(-1px,-1px);
     background-blend-mode: hard-light;
     box-shadow: 2px 2px 30px var(--btn-shadow);
+    filter: brightness(80%);
+    filter: contrast(4px);
 }
 
 footer {
