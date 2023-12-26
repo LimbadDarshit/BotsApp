@@ -46,7 +46,7 @@
         <form action="#" method="post" id="form" name="form" class="log-in" enctype="multipart/form-data">
 
             <!-- user -->
-            <div class="input-field fadeout">
+            <div class="input_field fadeout" name="user_field">
                 <div class="input">
                     <input type="text" id="user" name="user" placeholder=" " autocomplete="off"/>
                     <label for="user">Enter Username / E-mail</label>
@@ -54,7 +54,7 @@
             </div>
             
             <!-- Name -->
-            <div class="input-field fadeout name toggle_field" >
+            <div class="input_field fadeout name toggle_field" name="name_field" >
                 <div class="input">
                     <input type="text" id="first-name" name="first-name" placeholder=" " autocomplete="off" />
                     <label for="first-name">Enter First Name</label>
@@ -66,7 +66,7 @@
             </div>
 
             <!-- e-mail -->
-            <div class="input-field fadeout">
+            <div class="input_field fadeout toggle_field" name="e-mail_field">
                 <div class="input">
                     <input type="text" id="e-mail" name="e-mail" placeholder=" " autocomplete="off"/>
                     <label for="e-mail">Enter your E-mail</label>
@@ -74,8 +74,7 @@
             </div>
             
             <!-- password -->
-            <div class="input-field fadeout">
-                
+            <div class="input_field fadeout" name="pass_field">  
                 <!-- pass -->
                 <div class="input">
                     <div style="height:0px">
@@ -85,9 +84,11 @@
                     <input type="password" id="pass" name="pass" placeholder=" " autocomplete="off" />
                     <label for="pass">Password</label>
                 </div>
-
-                <!-- con_pass -->
-                <div class="input">
+            </div>
+            
+            <!-- con_pass -->
+            <div class="input_field fadeout toggle_field" name="con_pass_field">  
+                 <div class="input">
                     <div style="height:0px">
                         <!-- url change when uploading -->
                         <img src="/botsapp/img/icons/form/eye.png" name="eye" class="con_eye" height="20px" width="20px" onclick="toggle_pass_box(this)"> 
@@ -95,18 +96,18 @@
                     <input type="password" id="con_pass" name="con_pass" placeholder=" " autocomplete="off" />
                     <label for="con_pass">Confirm Password</label>
                 </div>
-
             </div>
+            
 
             <!-- avatar -->
-            <div class="input-field fadeout">
+            <div class="input_field fadeout toggle_field" name="avatar_field">
                <div class="input-img">
                     <input type="file" name="avatar" id="avatar" accept="image/jpeg , image/png , image/webp">
                </div>
             </div>
             
             <!-- buttons -->
-            <div class="input-field fadeout">
+            <div class="input_field fadeout" name="button_field">
                 <div class="button submit fadeout">
                     <input type="submit" name="submit" value="Log-in" spellcheck="false"/>
                 </div>

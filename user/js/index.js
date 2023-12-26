@@ -10,16 +10,34 @@ document.addEventListener('DOMContentLoaded' , function () {
 
     // chnage button toggle
     document.querySelector('input[name="change"]').addEventListener( 'click' , function (){
-        
-        var title = (form.className.includes('log-in')) ? 'log-in' : 'sign-in' ;
+
+        let title = (form.className.includes('log-in')) ? 'log-in' : 'sign-in' ;
+        var input_field = document.querySelectorAll('.input_field');
         var toggle_field = document.querySelectorAll(".toggle_field");
-        var buttons = form.querySelectorAll('.button input');
+        // var buttons = form.querySelectorAll('.button input');
+        
+        if(title == 'log-in') {
+            form.classList.replace('log-in' , 'sign-in');
+            title = 'sign-in';
+        }  else{
+            form.classList.replace('sign-in' , 'log-in');
+            title = 'log-in';
+        } 
+        
+        console.log( title);
+        // console.log(input_field);
 
-        form.classList.replace (title == 'log-in') ? ('log-in' , 'sign-in') : ('sign-in' , 'log-in');
+        if(title == 'log-in'){
 
-        toggle_field.forEach(element => {
-            (title == 'log-in') ? hide(element) : show(element) ;
-        });
+            // label change
+                // user
+                document.querySelector('label[for="user"]').innerHTML = "Enter Username / E-mail";
+        }   else    {
+            // label change
+                // user
+                document.querySelector('label[for="user"]').innerHTML = "Enter Username";
+        }
+
     });
     // 
 
