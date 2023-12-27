@@ -1,15 +1,17 @@
-// Navigation start  //chnage all urls
+// Navigation start
 function tohomepage()   {
-    window.location.assign('/botsapp/');
+    window.location.assign('/');
 }
 
 function togroupchat()  {
-    window.location.assign('/botsapp/group_chat.php');
+    window.location.assign('/group_chat.php');
 }
 
 document.addEventListener('DOMContentLoaded' , function () {
     // title of the list page
-    document.querySelector('#cname').innerHTML = document.title;
+    if(document.querySelector('#cname')){
+        document.querySelector('#cname').innerHTML = document.title;
+    }
 
                                                         // i should use img or ele.loaded to stop the skeleton animation rather then the whole dom content
     // skeleton animation stop 

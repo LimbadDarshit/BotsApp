@@ -10,6 +10,7 @@
     <script type="text/javascript" src="../js/interface.js"></script>
 </head>
 <body onload="document.forms['form']['user'].focus()">
+    
     <header style="background-color: rgb(5, 33, 60) ;">
         <div class="title">
             <img src="../img/botsapp_white.png" onclick="tohomepage()">
@@ -17,6 +18,7 @@
             <p>-A Better place for chat.</p>
         </div>
     </header>
+
     <div class="square-container"> 
         <span class="square"></span><span class="square"></span><span class="square"></span><span class="square"></span><span class="square"></span>
         <span class="square"></span><span class="square"></span><span class="square"></span><span class="square"></span><span class="square"></span>
@@ -40,10 +42,9 @@
 
         <div class="heading">
             <h1 class="fadeout">Log-in</h1>
-            <p class="fadeout">Enter Your username/e-mail and password</p>  
         </div>
 
-        <form action="#" method="post" id="form" name="form" class="log-in" enctype="multipart/form-data">
+        <form action="/functionality/_user.php?action=log-in" method="get" id="form" name="form" class="log-in" enctype="multipart/form-data">
 
             <!-- user -->
             <div class="input_field fadeout" name="user_field">
@@ -54,7 +55,7 @@
             </div>
             
             <!-- Name -->
-            <div class="input_field fadeout name toggle_field" name="name_field" >
+            <div class="input_field fadeout name toggle_field hide" name="name_field" >
                 <div class="input">
                     <input type="text" id="first-name" name="first-name" placeholder=" " autocomplete="off" />
                     <label for="first-name">Enter First Name</label>
@@ -66,10 +67,11 @@
             </div>
 
             <!-- e-mail -->
-            <div class="input_field fadeout toggle_field" name="e-mail_field">
+            <div class="input_field fadeout toggle_field hide" name="e-mail_field">
                 <div class="input">
-                    <input type="text" id="e-mail" name="e-mail" placeholder=" " autocomplete="off"/>
+                    <input type="text" id="e-mail" name="e-mail" placeholder=" " autocomplete="off" onkeyup="email_validation()"/>
                     <label for="e-mail">Enter your E-mail</label>
+                    <span id="e-mail_span"></span>
                 </div>
             </div>
             
@@ -79,7 +81,7 @@
                 <div class="input">
                     <div style="height:0px">
                         <!-- url change when uploading -->
-                        <img src="/botsapp/img/icons/form/eye.png" name="eye" height="20px" width="20px" onclick="toggle_pass_box(this)"> 
+                        <img src="/img/icons/form/eye.png" name="eye" height="20px" width="20px" onclick="toggle_pass_box(this)"> 
                     </div>
                     <input type="password" id="pass" name="pass" placeholder=" " autocomplete="off" />
                     <label for="pass">Password</label>
@@ -87,11 +89,11 @@
             </div>
             
             <!-- con_pass -->
-            <div class="input_field fadeout toggle_field" name="con_pass_field">  
+            <div class="input_field fadeout toggle_field hide" name="con_pass_field">  
                  <div class="input">
                     <div style="height:0px">
                         <!-- url change when uploading -->
-                        <img src="/botsapp/img/icons/form/eye.png" name="eye" class="con_eye" height="20px" width="20px" onclick="toggle_pass_box(this)"> 
+                        <img src="/img/icons/form/eye.png" name="eye" class="con_eye" height="20px" width="20px" onclick="toggle_pass_box(this)"> 
                     </div>
                     <input type="password" id="con_pass" name="con_pass" placeholder=" " autocomplete="off" />
                     <label for="con_pass">Confirm Password</label>
@@ -100,7 +102,7 @@
             
 
             <!-- avatar -->
-            <div class="input_field fadeout toggle_field" name="avatar_field">
+            <div class="input_field fadeout toggle_field hide" name="avatar_field">
                <div class="input-img">
                     <input type="file" name="avatar" id="avatar" accept="image/jpeg , image/png , image/webp">
                </div>
@@ -109,10 +111,10 @@
             <!-- buttons -->
             <div class="input_field fadeout" name="button_field">
                 <div class="button submit fadeout">
-                    <input type="submit" name="submit" value="Log-in" spellcheck="false"/>
+                    <input type="submit" name="submit" value="Log-in" spellcheck="false" disabled/>
                 </div>
                 <div class="button change fadeout">
-                    <input type="button" name="change" value="Register" >        
+                    <input type="button" name="change" value="Register" disabled>        
                 </div>
             </div>
             
