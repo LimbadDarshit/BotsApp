@@ -86,7 +86,7 @@ body{
     background-color: rgba(0, 42, 70, 0.9);
     border: 5px solid rgb(5, 33, 60);
     color: var(--text-color);
-    border-radius: 30px;
+    border-radius: 10px 30px;
     padding: 20px;
     overflow-y: visible;
     overflow-x: hidden;
@@ -190,11 +190,28 @@ body{
 }
 
 .input_field span   {
-    display: none;
+    display: block;
     text-align: end;
     text-transform: capitalize;
-    color: red;
+    font-weight: 100;
+    color: rgb(240, 31, 31);
     font-size: .8rem;
+}
+
+.input_field #pass_rules {
+    height: auto;
+    display: none;
+    text-align: start;
+    text-transform: capitalize;
+    color: #bf6ae2;
+    font-size: .8rem;
+}
+.input_field #pass_rules p{
+    margin: 0;
+}
+
+.input_field #pass_rules span   {
+    text-align: start;
 }
 
 .input_field .submit input{

@@ -1,12 +1,18 @@
+
+
 document.addEventListener('DOMContentLoaded' , function () {
-    email = document.querySelector('#e-mail');
+     // globle variable
+ input_field = document.querySelectorAll('.input_field');
+ email = document.querySelector('#e-mail');
+ pass = document.querySelector('#pass');
+ submit_btn = document.querySelector('.submit input');
+ buttons = document.querySelectorAll('.button input');
+ // 
     // chnage button toggle
     document.querySelector('input[name="change"]').addEventListener( 'click' , function (){
 
         let title = (form.className.includes('sign-in')) ? 'log-in' : 'sign-in' ;
-        var input_field = document.querySelectorAll('.input_field');
         var toggle_field = document.querySelectorAll(".toggle_field");
-        var buttons = form.querySelectorAll('.button input');
         
         if(title == 'log-in') {
             form.classList.replace('sign-in' , 'log-in');            
@@ -20,7 +26,6 @@ document.addEventListener('DOMContentLoaded' , function () {
         }  else{
             form.classList.replace('log-in' , 'sign-in');
             
-
             // label change
                 // user
                 document.querySelector('label[for="user"]').innerHTML = "Enter Username";
@@ -30,7 +35,7 @@ document.addEventListener('DOMContentLoaded' , function () {
             
         } 
 
-        // form action path
+        // set form action path
         set_form_action_path();
 
         // content chnage
@@ -90,11 +95,9 @@ function fade_out(ele){
 // validation
     // e-mail 
     function email_validation() {
-        var email = document.querySelector('#e-mail');
         var email_span = document.querySelector('#e-mail_span');
-        var submit_btn = document.querySelector('.submit input');
 
-        submit_btn.setAttribute('disabled' , 'true'); 
+        _submit_btn_disable(); 
         if( email.value == "" ) {
 
             email_span.innerHTML = "Enter Your Email...";
@@ -106,10 +109,79 @@ function fade_out(ele){
         {
             email_span.innerHTML = "Email is wrong!!!";
             email_span.style.display = 'block';
-        }else {
+        }   else {
             email_span.style.display = 'none';
-            submit_btn.removeAttribute('disabled'); 
+            _submit_btn_enable(); 
         }
+    }
+
+    // password validation
+    function pass_validation()  {
+        var pass_rules = document.querySelector('#pass_rules');
+
+        // regex
+        var has_uppercase = /[A-Z]/.test(pass.value);
+        var has_lowercase = /[a-z]/.test(pass.value);
+        var has_digits = /[\d]/.test(pass.value);
+        var has_symbols = /[@#$%]/.test(pass.value);
+        // 
+
+        // prefix
+        pass_rules.style.display='block';
+        pass_rules.querySelectorAll('span').forEach(ele => {ele.style.display = 'none'});
+        _submit_btn_disable();
+        // 
+
+        // conditions
+        if(pass.value == "")    {
+            pass_rules.querySelector('span[name="1"]').style.display = "block";
+        }else if(pass.value.length < 8) {
+            pass_rules.querySelector('span[name="2"]').style.display = "block";
+        }else if(_is_all_char_same(pass.value)){
+            pass_rules.querySelector('span[name="3"]').style.display = "block";
+        }else if( !has_uppercase || !has_lowercase || !has_digits || !has_symbols)  {
+            pass_rules.querySelector('span[name="4"]').style.display = "block";
+        }else   {
+            pass_rules.style.display='none';
+            _submit_btn_enable();
+        }
+        // 
+
+    }
+
+    function _is_all_char_same(str)  {
+        var first_char = str[0];
+
+        if(str.length == 1) {
+            return false;
+        }
+        
+        for(let i=0 ; i<str.length ; i++)  {
+            if(first_char != str[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function con_pass_validation()  {
+        var con_pass = document.querySelector('#con_pass');
+        
+    }
+
+    function _submit_btn_disable() {
+        submit_btn.setAttribute('disabled' , 'true');
+    }
+
+    function _submit_btn_enable() {
+        var validation_fields = document.querySelectorAll('.validation');
+
+        validation_fields.forEach(field => {
+            if(field.style.display == 'block')  {
+                return;
+            }
+        });
+        submit_btn.removeAttribute('disabled');
     }
 // 
 

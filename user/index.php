@@ -71,20 +71,27 @@
                 <div class="input">
                     <input type="text" id="e-mail" name="e-mail" placeholder=" " autocomplete="off" onkeyup="email_validation()"/>
                     <label for="e-mail">Enter your E-mail</label>
-                    <span id="e-mail_span"></span>
+                    <span id="e-mail_span" class="validation"></span>
                 </div>
             </div>
             
             <!-- password -->
             <div class="input_field fadeout" name="pass_field">  
-                <!-- pass -->
                 <div class="input">
                     <div style="height:0px">
                         <!-- url change when uploading -->
                         <img src="/img/icons/form/eye.png" name="eye" height="20px" width="20px" onclick="toggle_pass_box(this)"> 
                     </div>
-                    <input type="password" id="pass" name="pass" placeholder=" " autocomplete="off" />
+                    <input type="password" id="pass" name="pass" placeholder=" " autocomplete="off" onkeyup="pass_validation()"/>
                     <label for="pass">Password</label>
+                </div>
+                
+                <div id="pass_rules" class="validation">
+                    <p>Password Rules :</p>
+                    <span name="1">password can't be emety.</span>
+                    <span name="2">password should have min 8 charecters</span>
+                    <span name="3">all cherecters of password can't be same.</span>
+                    <span name="4">password should have uper &lower case cherecters,<br>symbols( @#$% ) , digit(0-9).</span>
                 </div>
             </div>
             
@@ -95,9 +102,10 @@
                         <!-- url change when uploading -->
                         <img src="/img/icons/form/eye.png" name="eye" class="con_eye" height="20px" width="20px" onclick="toggle_pass_box(this)"> 
                     </div>
-                    <input type="password" id="con_pass" name="con_pass" placeholder=" " autocomplete="off" />
+                    <input type="password" id="con_pass" name="con_pass" placeholder=" " autocomplete="off" onkeyup="con_pass_validation()"/>
                     <label for="con_pass">Confirm Password</label>
                 </div>
+                <span id="con_pass_span" class="validation"></span>
             </div>
             
 
