@@ -37,7 +37,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <p class="skeleton skeleton-text">last chat sdaaaaaaadddddddddddddddddddddddddaaaaaaaaaaaaa here,</p>
                             </div>
                         </td>
                     </tr>

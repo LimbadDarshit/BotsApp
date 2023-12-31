@@ -8,14 +8,21 @@ function togroupchat()  {
 }
 
 document.addEventListener('DOMContentLoaded' , function () {
+
+    // global var
+    settings_box =  document.querySelector(".settings-box");
+    notification = document.querySelector('#notification');
+    Alert = document.querySelector('#alert');
+    // 
+
+
     // title of the list page
     if(document.querySelector('#cname')){
         document.querySelector('#cname').innerHTML = document.title;
     }
 
-                                                        // i should use img or ele.loaded to stop the skeleton animation rather then the whole dom content
     // skeleton animation stop 
-    const ani_ele = document.querySelectorAll('.list img , .list h5 , .list p');
+    const ani_ele = document.querySelectorAll('.list img , .list h5 , .list .last-chat');
             // animation elements
     ani_ele.forEach(function (element) {
         element.classList.remove('skeleton');
@@ -53,8 +60,6 @@ document.addEventListener('DOMContentLoaded' , function () {
 
 // toggle settings-box
 function toggle_settings_box()   {
-    const settings_box = document.querySelector(".settings-box");
-
     if (!settings_box.classList.contains('settings-box_show')) {
 
         settings_box.classList.add('settings-box_show');
@@ -85,9 +90,7 @@ function remove_selected_li(){
     })
 } 
 
-function closesettingsbox(event) {
-    settings_box =  document.querySelector(".settings-box");
-    
+function closesettingsbox(event) {    
 
     if((!settings_box.contains(event.target)) &&
         (settings_box != event.target) && 
@@ -130,6 +133,72 @@ function profile_edit_box_toggle(edit_icon) {
             }
 }
 
+//notification
+function new_notification(str) {
+    
+    setTimeout(() => {
+        _add_notification_show(str);
+        document.addEventListener('click' , _onclick_notification_hide);
+    }, 100);
+
+}
+
+function _onclick_notification_hide(event)   {
+
+    if((!notification.contains(event.target)) && (notification != event.target) ) {
+        _remove_notification_show();
+
+        document.removeEventListener('click' , _onclick_notification_hide);
+    }
+}
+
+// show is class which shows a notifiacation
+function _add_notification_show(str){
+    notification.innerHTML = str;
+    notification.classList.add('show');
+}
+
+function _remove_notification_show(){
+    notification.classList.remove('show');
+    setTimeout(() => {
+        notification.innerHTML = "";
+    }, 70);
+}
+
+// 
+
+//Alert
+function new_Alert(str) {
+    setTimeout(() => {
+
+        _add_Alert_show(str);
+        document.addEventListener('click' , _onclick_Alert_hide);
+        
+    } , 100);
+}
+
+function _onclick_Alert_hide(event)   {
+
+    if((!Alert.contains(event.target)) && (Alert != event.target) ) {
+        _remove_Alert_show();
+
+        document.removeEventListener('click' , _onclick_Alert_hide);
+    }
+}
+
+function _add_Alert_show(str){
+    Alert.innerHTML = str;
+    Alert.classList.add('show');
+}
+
+function _remove_Alert_show(){
+    Alert.classList.remove('show');
+    setTimeout(() => {
+        Alert.innerHTML = "";
+    }, 70); 
+}
+
+//
 
 // dispose space
 

@@ -36,8 +36,8 @@
                                 <img class="skeleton" src="img/default_dp.png">
                             </div>
                             <div class="details">
-                                <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <h5 class="skeleton skeleton-text">Name</h5> 
+                                <div class="last-chat skeleton skeleton-text">This example assumes that you want to prevent the text from wrapping and display an ellipsis when it overflows. Adjust the max-width property according to your layout requirements. If you want the text to break and show ellipsis within a</div>
                             </div>
                         </td>
                     </tr>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -59,7 +59,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -70,7 +70,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -81,7 +81,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -92,7 +92,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -103,7 +103,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -114,7 +114,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -125,7 +125,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -136,7 +136,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -147,7 +147,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -158,7 +158,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -169,7 +169,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -180,7 +180,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -191,7 +191,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -202,7 +202,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>
@@ -213,7 +213,7 @@
                             </div>
                             <div class="details">
                                 <h5 class="skeleton skeleton-text">Name</h5>
-                                <p class="skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</p>
+                                <div class="last-chat skeleton skeleton-text">last chat sdaaaaaaaaaaaaaaaaaaaa here,</div>
                             </div>
                         </td>
                     </tr>

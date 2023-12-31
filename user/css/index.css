@@ -24,7 +24,6 @@ body{
 
 .hide {
     display: none !important;
-    
 }
 
 :root{
@@ -66,11 +65,12 @@ body{
     border: 2px solid white;
     margin: 10px;
     opacity: 20%;
-    transition: background-color .2s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: all 3s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
 .square:hover   {
     background-color: blueviolet;
+    box-shadow: 5px 5px 20px blueviolet;
 }
 
 .box {
@@ -83,8 +83,8 @@ body{
     align-items: center;
     flex-direction: column;
     text-align: center;
-    background-color: rgba(0, 42, 70, 0.9);
-    border: 5px solid rgb(5, 33, 60);
+    background-color: rgb(0 26 44 / 88%);
+    border: 2px solid rgb(0 0 0 / 41%);
     color: var(--text-color);
     border-radius: 10px 30px;
     padding: 20px;
@@ -140,11 +140,6 @@ body{
 
 }
 
-.input_field .input input:hover {
-    box-shadow: -2px -2px 10px rgba(89, 43, 226, 0.1);
-
-}
-
 .input_field .input input:focus , .input_field .input input:not(:placeholder-shown){
     border-color: var(--text-color) !important;
     transition: border-color .5s;
@@ -166,17 +161,17 @@ body{
     color: var(--text-color);
 }
 
-.name{
+.name_field{
     display: flex;
     position: relative;
 }
 
-.name input {
+.name_field input {
     width: 9.5rem !important;
     text-transform: capitalize;
 }
 
-.name label  {
+.name_field label  {
     width: 60%;
     font-size: 0.8rem;
 }
@@ -190,7 +185,7 @@ body{
 }
 
 .input_field span   {
-    display: block;
+    display: none;
     text-align: end;
     text-transform: capitalize;
     font-weight: 100;
@@ -238,6 +233,11 @@ body{
     border: none;
     --btn-shadow :rgba(240, 248, 255, 0.18);
     transition: all .1s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.input_field .button input[disabled="true"]   {
+    background-image: none;
+    background-color: rgba(58, 58, 58, 0.699) ;
 }
 
 .input_field .button input:hover {

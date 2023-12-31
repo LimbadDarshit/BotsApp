@@ -2,48 +2,73 @@
 
 document.addEventListener('DOMContentLoaded' , function () {
      // globle variable
- input_field = document.querySelectorAll('.input_field');
- email = document.querySelector('#e-mail');
- pass = document.querySelector('#pass');
- submit_btn = document.querySelector('.submit input');
- buttons = document.querySelectorAll('.button input');
- // 
+        input_field = document.querySelectorAll('.input_field');
+        user = document.querySelector('#user');
+        email = document.querySelector('#e-mail');
+        pass = document.querySelector('#pass');
+        avatar = document.querySelector('#avatar');
+        submit_btn = document.querySelector('.submit input');
+        buttons = document.querySelectorAll('.button input');
+    // 
+
     // chnage button toggle
     document.querySelector('input[name="change"]').addEventListener( 'click' , function (){
 
-        let title = (form.className.includes('sign-in')) ? 'log-in' : 'sign-in' ;
+        let form_name = (form.attributes.name.value == 'sign-in') ? 'log-in' : 'sign-in' ;
         var toggle_field = document.querySelectorAll(".toggle_field");
-        
-        if(title == 'log-in') {
-            form.classList.replace('sign-in' , 'log-in');            
-            // label change
-                // user
-                document.querySelector('label[for="user"]').innerHTML = "Enter Username / E-mail";
+
+        // pre actions
+            form.attributes.name.value = form_name;
+        // 
+
+        if(form_name == 'log-in') {
+                
+            // user label change
+                document.querySelector('label[for="user"]').innerHTML = "Username / E-mail";
             
             // hide sign-in fields
-                toggle_field.forEach(ele => {hide(ele)});
+                toggle_field.forEach(ele => { hide(ele) });
             
-        }  else{
-            form.classList.replace('log-in' , 'sign-in');
+            // remove user validation attribute
+                user.removeAttribute('onkeyup');
+                document.querySelector('#user_span').style.display = 'none' ;
+
+            // remove password validation attribute
+                pass.removeAttribute('onkeyup');
+                document.querySelector('#pass_rules').style.display = 'none' ;
             
-            // label change
-                // user
-                document.querySelector('label[for="user"]').innerHTML = "Enter Username";
+            // enable submit button
+                _submit_btn_enable();
+            
+
+        }  else if(form_name == 'sign-in'){  
+
+            // user label change
+                document.querySelector('label[for="user"]').innerHTML = "Username";
             
             // show sign-in fields
             toggle_field.forEach(ele => {show(ele)});
-            
+
+            // set user validation attribute
+            user.setAttribute('onkeyup' , 'is_unm_available()');
+
+            // set password validation attribute
+            pass.setAttribute('onkeyup' , 'pass_validation()');
+
         } 
+
+        //notification 
+            new_notification(form_name+' form.');
 
         // set form action path
         set_form_action_path();
 
         // content chnage
             // hading h1
-            document.querySelector('.heading > h1').innerHTML = title;
+            document.querySelector('.heading > h1').innerHTML = form_name;
             // buttons
-            buttons[0].value = title;
-            buttons[1].value = (title == 'sign-in') ? 'log-in' : 'sign-in';
+            buttons[0].value = form_name.replace('-' , ' ');
+            buttons[1].value = (form_name == 'sign-in') ? 'log in' : 'Register';
 
     });
     // 
@@ -63,7 +88,7 @@ document.addEventListener('DOMContentLoaded' , function () {
 // set_form_action_path
 function set_form_action_path() {
     let form_action_path = "/functionality/_user.php?";
-    var form_action =(form.className.includes('log-in')) ? form_action_path+"action=log-in" : form_action_path+"action=sign-in";
+    var form_action =(form.attributes.name.value == 'log-in') ? form_action_path+"action=log-in" : form_action_path+"action=sign-in";
     form.setAttribute('action' , form_action);
 }
 
@@ -93,6 +118,54 @@ function fade_out(ele){
 }
 
 // validation
+    // is user name available
+    function is_unm_available() {
+        var inputed_unm = user.value;
+        var user_span = document.querySelector('#user_span');
+
+        // regex
+        var has_blankspace = /[ ]/.test(inputed_unm);
+        // 
+
+        // pre process
+            user_span.style.display='none';
+            user_span.style.color = 'red';
+        // 
+
+        if( has_blankspace )  {
+            user_span.innerHTML = "space is not allowed use '_'.";
+            user_span.style.display='block';
+            _submit_btn_disable();
+        }else  if(inputed_unm.length < 8)  {
+            user_span.innerHTML = "Username is too short , more then 8 cherecters required";
+            user_span.style.display='block';
+            _submit_btn_disable();
+        }else   {
+
+            var request = new XMLHttpRequest();
+            var URL = location.origin + "/functionality/_chk_unm_available.php?UNM=".concat(inputed_unm);
+    
+            request.onreadystatechange = function () {
+                if(request.readyState === 4 && request.status === 200)  {
+                    // availability == 1 = available ,  availability == 0 = not available
+                    var availability = request.responseText;
+                    if(availability == 1)   {
+                        user_span.style.color = '#00ff00';
+                        user_span.innerHTML = 'AVAILABLE';
+                        _submit_btn_enable();
+                    }   else if(availability == 0)  {
+                        user_span.innerHTML = 'NOT AVAILABLE';
+                    }
+                    user_span.style.display ='block';
+                }
+            }
+    
+            request.open('GET' , URL , true);
+            request.send();
+
+        }
+    }
+
     // e-mail 
     function email_validation() {
         var email_span = document.querySelector('#e-mail_span');
@@ -164,9 +237,38 @@ function fade_out(ele){
         return true;
     }
 
+    // check does password and confirm password field is same or not
     function con_pass_validation()  {
         var con_pass = document.querySelector('#con_pass');
+        var con_pass_span = document.querySelector('#con_pass_span');
+        var pass_rules = document.querySelector('#pass_rules');
+
         
+        if(con_pass.value == '' || pass.value == '' || pass_rules.style.display == 'block' )   {
+            con_pass_span.innerHTML = "password is incorect!!";
+        }else{
+            con_pass_span.innerHTML = "password is not same!!"
+        }
+        
+        con_pass_span.style.display = (pass.value !== con_pass.value) ? 'block' : 'none';
+
+    }
+
+    function avatar_validation()    {
+        var allowed_extensions = [ '.jpg' , '.jpeg' , '.png' , '.webp'];
+        var img_extension = '.' + avatar.value.split('.').pop().toLowerCase();
+        var avatar_span = document.querySelector('#avatar_span');
+
+       if(!allowed_extensions.includes(img_extension))  {
+            avatar.style.color = 'red';
+            avatar_span.style.display='block';
+            _submit_btn_disable();
+       }else {
+            avatar.style.color = 'aliceblue';
+            avatar_span.style.display = 'none';
+            _submit_btn_enable();
+       }
+
     }
 
     function _submit_btn_disable() {
@@ -174,14 +276,52 @@ function fade_out(ele){
     }
 
     function _submit_btn_enable() {
-        var validation_fields = document.querySelectorAll('.validation');
+        var validation_input = document.querySelectorAll('.validation input');
+        var validation_span = document.querySelectorAll('.validation > span , .validation #pass_rules');
+        var fleg = 0;
 
-        validation_fields.forEach(field => {
-            if(field.style.display == 'block')  {
-                return;
+        if( (validation_span[0].style.display == 'block') && (validation_span[0].value !== 'available' ) && (validation_input[0] != '' ) )  {
+            _submit_btn_disable();
+            fleg = 1;
+        }
+        for(var i=1 ; i<validation_span.length ; i++)   {
+            if( (validation_span[i].style.display == 'block') && (validation_input[i] != '' ) )  {
+                _submit_btn_disable();
+                fleg = 1;
             }
-        });
-        submit_btn.removeAttribute('disabled');
+        }
+
+        if(fleg == 0) {
+            submit_btn.removeAttribute('disabled');
+        }
+        
+    }
+
+    function check_all_fields() {
+        if(form.attributes.name.value == 'log-in')   {
+
+            if(user.value == '' || pass.value == ''){  
+                new_Alert('Username or/and Password is Empty!!!');
+                return false;
+            }
+
+        }else if(form.attributes.name.value == 'sign-in')    {
+           
+            all_input_fields = document.querySelectorAll('.input_field #user , .input_field #surname , .input_field #name , .input_field #e-mail , .input_field #pass , .input_field #con_pass , .input_field #avatar');
+            var fleg=-1;
+            all_input_fields.forEach(field => {
+                if(field.value == ''){
+                    new_Alert('All fields required!!!');
+                    fleg++;
+                }
+            })
+
+            if(fleg != -1)  {
+                return false;
+            }
+        }
+        
+        return true;
     }
 // 
 
